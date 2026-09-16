@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ThemeToggle from "@/components/ThemeToggle";
 import MobileNav from "@/components/MobileNav";
 
@@ -146,6 +147,18 @@ export default function Home() {
 
       {/* Hero */}
       <section id="top" className="mx-auto flex w-full max-w-4xl flex-col gap-7 px-8 pb-24 pt-32 md:px-16 md:pt-36">
+        <div
+          className="h-24 w-24 overflow-hidden rounded-full bg-[var(--surface)] ring-1 ring-[var(--border)]"
+        >
+          <Image
+            src="/avatar.png"
+            alt="Joseph Jun"
+            width={192}
+            height={192}
+            className="h-full w-full object-cover"
+            priority
+          />
+        </div>
         <div className="font-mono text-[13px] font-medium tracking-wide text-[var(--accent)]">
           [ software engineer ]
         </div>
