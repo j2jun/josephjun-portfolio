@@ -172,7 +172,7 @@ export default function Home() {
             <PinIcon /> Bellevue, WA
           </div>
           <div className="flex items-center gap-2 rounded-md border border-[var(--accent)] px-4 py-2 font-mono text-[13px] font-medium text-[var(--accent)]">
-            <ShieldIcon /> active dod secret clearance
+            <ShieldIcon /> Active DoD Secret Clearance
           </div>
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-6">
