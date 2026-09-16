@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #faf9f5;
+  --surface: #ffffff;
+  --surface-alt: #f3f1ea;
+  --text: #1c1c1a;
+  --text-muted: #5a564f;
+  --text-faint: #8a857c;
+  --border: rgba(28, 28, 26, 0.1);
+  --border-strong: rgba(28, 28, 26, 0.16);
+  --accent: #2b4c6f;
+  --accent-text: #faf9f5;
+  --nav-bg: rgba(250, 249, 245, 0.92);
+  --contact-bg: #1c1c1a;
+  --contact-text: #faf9f5;
+  --contact-muted: #b8b4ac;
+  --contact-border: rgba(255, 255, 255, 0.16);
+}
+
+.dark {
+  --bg: #0a0b0d;
+  --surface: #15171a;
+  --surface-alt: #0d0f12;
+  --text: #f2f2f0;
+  --text-muted: #9a9a94;
+  --text-faint: #6e6d68;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --accent: #22d3ee;
+  --accent-text: #0a0b0d;
+  --nav-bg: rgba(10, 11, 13, 0.85);
+  --contact-bg: #0d0f12;
+  --contact-text: #f5f5f3;
+  --contact-muted: #9a9a94;
+  --contact-border: rgba(255, 255, 255, 0.2);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-public-sans);
+  --font-mono: var(--font-plex-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
