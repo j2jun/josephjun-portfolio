@@ -119,7 +119,17 @@ export default function Home() {
     <div className="flex min-h-screen w-full flex-col bg-[var(--bg)] text-[var(--text)]">
       {/* Nav */}
       <header className="sticky top-0 z-10 flex items-center justify-between border-b border-[var(--border)] bg-[var(--nav-bg)] px-8 py-5 backdrop-blur-sm md:px-16">
-        <a href="#top" className="font-display text-lg font-bold">
+        <a href="#top" className="flex items-center gap-3 font-display text-lg font-bold">
+          <span className="h-9 w-9 overflow-hidden rounded-full bg-[var(--surface)] ring-1 ring-[var(--border)]">
+            <Image
+              src="/avatar.png"
+              alt="Joseph Jun"
+              width={72}
+              height={72}
+              className="h-full w-full object-cover"
+              priority
+            />
+          </span>
           Joseph Jun
         </a>
         <nav className="flex items-center gap-4 md:gap-8">
@@ -147,18 +157,6 @@ export default function Home() {
 
       {/* Hero */}
       <section id="top" className="mx-auto flex w-full max-w-4xl flex-col gap-7 px-8 pb-24 pt-32 md:px-16 md:pt-36">
-        <div
-          className="h-24 w-24 overflow-hidden rounded-full bg-[var(--surface)] ring-1 ring-[var(--border)]"
-        >
-          <Image
-            src="/avatar.png"
-            alt="Joseph Jun"
-            width={192}
-            height={192}
-            className="h-full w-full object-cover"
-            priority
-          />
-        </div>
         <div className="font-mono text-[13px] font-medium tracking-wide text-[var(--accent)]">
           [ software engineer ]
         </div>
