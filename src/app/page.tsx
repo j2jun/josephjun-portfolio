@@ -1,4 +1,5 @@
 import ThemeToggle from "@/components/ThemeToggle";
+import MobileNav from "@/components/MobileNav";
 
 const experience = [
   {
@@ -120,7 +121,7 @@ export default function Home() {
         <a href="#top" className="font-display text-lg font-bold">
           Joseph Jun
         </a>
-        <nav className="flex items-center gap-6 md:gap-8">
+        <nav className="flex items-center gap-4 md:gap-8">
           {navLinks.map((l) => (
             <a
               key={l.href}
@@ -139,6 +140,7 @@ export default function Home() {
             résumé
           </a>
           <ThemeToggle />
+          <MobileNav links={navLinks} />
         </nav>
       </header>
 
