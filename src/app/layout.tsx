@@ -35,6 +35,12 @@ export const metadata: Metadata = {
     siteName: "Joseph Jun",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Joseph Jun — Software Engineer",
+    description:
+      "Software engineer building reliable, scalable systems — currently at Amazon Prime Video.",
+  },
 };
 
 // Runs before paint to avoid a light/dark flash on load.
