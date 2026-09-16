@@ -95,6 +95,15 @@ const skills: [string, string[]][] = [
     "Security & Privacy",
     ["Security Engineering", "Privacy Engineering", "Anti-Piracy Automation", "Threat Assessment"],
   ],
+  [
+    "Collaboration & Support",
+    [
+      "Root Cause Analysis",
+      "Incident Response",
+      "Cross-Functional Leadership",
+      "Technical Communication",
+    ],
+  ],
 ];
 
 const navLinks = [
