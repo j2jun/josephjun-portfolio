@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Joseph Jun — Software Engineer",
   description:
-    "Portfolio of Joseph Jun, a software engineer building reliable, scalable systems — currently at Amazon Prime Video.",
+    "Portfolio of Joseph Jun, a software engineer building reliable, scalable systems, actively seeking his next role.",
   openGraph: {
     title: "Joseph Jun — Software Engineer",
     description:
-      "Software engineer building reliable, scalable systems — currently at Amazon Prime Video.",
+      "Software engineer building reliable, scalable systems, actively seeking his next role.",
     url: siteUrl,
     siteName: "Joseph Jun",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Joseph Jun — Software Engineer",
     description:
-      "Software engineer building reliable, scalable systems — currently at Amazon Prime Video.",
+      "Software engineer building reliable, scalable systems, actively seeking his next role.",
   },
 };
 

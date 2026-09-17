@@ -5,7 +5,7 @@ import MobileNav from "@/components/MobileNav";
 const experience = [
   {
     role: "Software Development Engineer — Apprentice",
-    dates: "2025 — present",
+    dates: "2025 — 2026",
     org: "Amazon Prime Video · Seattle, WA",
     bullets: [
       "Migrated service metadata from Amazon S3 to DynamoDB, consolidating automation workflows and cutting operational costs ~40%.",
@@ -173,8 +173,8 @@ export default function Home() {
           Building reliable, scalable systems.
         </h1>
         <p className="max-w-xl text-lg leading-relaxed text-[var(--text-muted)]">
-          From backend infrastructure to developer tooling — currently a Software Development
-          Engineer at Amazon Prime Video.
+          From backend infrastructure to developer tooling — actively seeking my next software
+          engineering role.
         </p>
         <div className="mt-2 flex flex-wrap gap-3">
           <div className="flex items-center gap-2 rounded-md border border-[var(--border)] px-4 py-2 font-mono text-[13px] text-[var(--text-muted)]">
@@ -227,8 +227,10 @@ export default function Home() {
           </div>
           <p className="max-w-3xl text-xl leading-relaxed text-[var(--text-muted)]">
             I&apos;m a software engineer with a B.S. in Mathematics-Computer Science from UC San
-            Diego, currently building backend systems and developer tooling at Amazon Prime
-            Video. Before software, I spent five years as a Sergeant in the U.S. Army, leading a
+            Diego. I most recently completed a Software Development Engineer apprenticeship at
+            Amazon Prime Video, building backend systems and developer tooling, and I&apos;m now
+            looking for my next opportunity. Before software, I spent five years as a Sergeant in
+            the U.S. Army, leading a
             squad of 15+ soldiers and managing multi-million-dollar equipment programs —
             experience that still shapes how I approach reliability, process, and working under
             pressure today. I hold an active DoD Secret clearance and work comfortably across
