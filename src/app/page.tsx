@@ -289,6 +289,7 @@ export default function Home() {
             >
               View more on GitHub &rarr;
             </a>
+<a href="/job-market/index.html" className="flex items-center gap-2 whitespace-nowrap font-mono text-[13px] font-medium text-[var(--accent)]">Tech hiring tracker &rarr;</a>
           </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {projects.map((p) => (
