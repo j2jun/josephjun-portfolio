@@ -1,0 +1,496 @@
+{
+  "meta": {
+    "title": "Tech hiring isn't shrinking. It's moving.",
+    "asOf": "2026-10-31",
+    "summary": "Demand has shifted toward AI, data, cloud and systems roles and away from entry-level and generic software roles. By location it is moving toward the US South and Northeast, India's captive engineering centers, the Gulf and nearshore hubs. This page summarizes figures from public sources as of the date above.",
+    "refreshCadenceDays": 7
+  },
+  "directions": {
+    "up": "Rising",
+    "down": "Falling",
+    "flat": "Flat",
+    "mixed": "Mixed"
+  },
+  "locations": [
+    {
+      "name": "United States",
+      "direction": "up",
+      "headline": "Recovering from a low base",
+      "evidence": "Active IT postings reached 625,633 in September 2026, the highest in over three years and up 22.4% year over year. Software postings still sit about 25% below February 2020.",
+      "confidence": "High",
+      "source": {
+        "name": "CompTIA",
+        "url": "https://www.comptia.org/en-us/about-us/news/press-releases/employer-demand-for-tech-talent-reaches-three-year-high-comptia-analysis-finds/"
+      },
+      "region": "Americas"
+    },
+    {
+      "name": "India: GCCs",
+      "direction": "up",
+      "headline": "Record hiring at multinationals' captive centers",
+      "evidence": "Projected 2026 hiring is 510,452, 3.4 times the 2021 level. 64% of new roles require AI, data science or automation skills, while overall white-collar hiring fell 9% year over year in June.",
+      "confidence": "Medium",
+      "source": {
+        "name": "Business Today",
+        "url": "https://www.businesstoday.in/jobs/story/at-5-1-lakh-jobs-indias-global-capability-centre-hiring-boom-scales-new-peak-540328-2026-07-01"
+      },
+      "region": "Asia-Pacific"
+    },
+    {
+      "name": "India: IT services",
+      "direction": "mixed",
+      "headline": "Recovering after a weak FY26",
+      "evidence": "The top five firms added 13,918 people in Q2 FY27 (July to September 2026) and 24,398 in the first half, against 2,689 a year earlier. Wipro shed 6,716.",
+      "confidence": "Medium",
+      "source": {
+        "name": "Free Press Journal",
+        "url": "https://www.freepressjournal.in/business/indian-it-giants-add-14000-employees-in-q2"
+      },
+      "region": "Asia-Pacific"
+    },
+    {
+      "name": "United Kingdom",
+      "direction": "up",
+      "headline": "Software postings up year over year",
+      "evidence": "The US and UK are the only two large markets where software vacancies are still climbing, per an Indeed-based analysis from May 2026.",
+      "confidence": "Medium",
+      "source": {
+        "name": "Orosz summary",
+        "url": "https://news.lavx.hu/article/state-of-the-software-engineering-job-market-in-2026"
+      },
+      "region": "Europe"
+    },
+    {
+      "name": "Germany",
+      "direction": "down",
+      "headline": "About half the pre-pandemic level",
+      "evidence": "Software postings are down 4 to 6% year over year, and the Indeed index sits near 50 against a February 2020 baseline of 100.",
+      "confidence": "Medium",
+      "source": {
+        "name": "Indeed dataset",
+        "url": "https://cotera.co/datasets/library/tech-job-postings-index"
+      },
+      "region": "Europe"
+    },
+    {
+      "name": "France",
+      "direction": "down",
+      "headline": "Slipping year over year",
+      "evidence": "Software postings are down 4 to 6% over the past 12 months.",
+      "confidence": "Medium",
+      "source": {
+        "name": "Orosz summary",
+        "url": "https://news.lavx.hu/article/state-of-the-software-engineering-job-market-in-2026"
+      },
+      "region": "Europe"
+    },
+    {
+      "name": "Canada",
+      "direction": "flat",
+      "headline": "Flat, with a surplus of software developers",
+      "evidence": "Software postings are flat year over year. All tech postings were 19% below early 2020 as of August 2025, a milder fall than in the US, UK or France. Job Bank rates the Toronto outlook for developers as very limited.",
+      "confidence": "Medium",
+      "source": {
+        "name": "BetaKit",
+        "url": "https://betakit.com/canadian-tech-job-listings-plunge-below-pre-pandemic-levels-and-ai-may-be-the-culprit/"
+      },
+      "region": "Americas"
+    },
+    {
+      "name": "Australia",
+      "direction": "up",
+      "headline": "Above its 2020 baseline",
+      "evidence": "Australia is the notable exception among tracked countries: software postings stayed above their February 2020 level.",
+      "confidence": "Medium",
+      "source": {
+        "name": "Old/New chart",
+        "url": "https://www.drorpoleg.com/charts/global-software-canary/"
+      },
+      "region": "Asia-Pacific"
+    },
+    {
+      "name": "Gulf: UAE and Saudi Arabia",
+      "direction": "up",
+      "headline": "Fastest-growing new hub for AI and data",
+      "evidence": "UAE hiring grew 39% and Saudi Arabia 26% in 2025. Data scientist hiring rose 43% and AI engineer hiring 31% from 2024 to 2025. Saudi online hiring slipped 1% year over year in August 2026.",
+      "confidence": "Medium",
+      "source": {
+        "name": "Khaleej Times",
+        "url": "https://www.khaleejtimes.com/business/uae-led-the-global-hiring-surge-in-2025-remotepass-report"
+      },
+      "region": "Middle East"
+    },
+    {
+      "name": "Southeast Asia",
+      "direction": "up",
+      "headline": "Offshore and engineering hub growth",
+      "evidence": "Recruiters describe Vietnam as the software-engineering center and the Philippines moving into cybersecurity and fintech. Philippine offshoring is forecast to reach $61 billion by 2030 and add nearly 1 million jobs.",
+      "confidence": "Low",
+      "source": {
+        "name": "Newsbytes PH",
+        "url": "https://newsbytes.ph/2025/09/20/ph-offshoring-industry-seen-to-hit-61b-by-2030-add-nearly-1-m-jobs/"
+      },
+      "region": "Asia-Pacific"
+    },
+    {
+      "name": "Latin America",
+      "direction": "up",
+      "headline": "Nearshore hiring for US companies",
+      "evidence": "Mexico, Brazil, Colombia and Argentina are the main nearshore markets, with senior developers costing 30 to 50% less than US peers. Colombia overtook Argentina as the top hiring destination.",
+      "confidence": "Low",
+      "source": {
+        "name": "Near via KEYT",
+        "url": "https://keyt.com/news/money-and-business/stacker-money/2026/01/29/five-trends-shaping-the-rise-in-us-companies-hiring-in-latin-america/"
+      },
+      "region": "Americas"
+    }
+  ],
+  "roles": [
+    {
+      "name": "AI/ML engineers and AI-skilled roles",
+      "direction": "up",
+      "headline": "Fastest-growing family",
+      "evidence": "US AI/ML job titles nearly tripled since May 2024 (13,636 active postings). India GCC AI, data and analytics hiring grew 38%. UAE AI engineer hiring grew 31%.",
+      "where": "US (TX, CA, NY, Seattle), Bengaluru and Hyderabad, UAE",
+      "source": {
+        "name": "CompTIA",
+        "url": "https://www.comptia.org/en-us/about-us/news/press-releases/employer-demand-for-tech-talent-reaches-three-year-high-comptia-analysis-finds/"
+      }
+    },
+    {
+      "name": "Data scientists, analysts and engineers",
+      "direction": "up",
+      "headline": "Growing, with real shortages",
+      "evidence": "Data analysts rank fourth by US posting volume. Gulf data scientist hiring rose 43%. A report cites a 43% supply gap for AI and data analytics talent in India.",
+      "where": "US, India, Gulf",
+      "source": {
+        "name": "CompTIA",
+        "url": "https://www.comptia.org/en-us/about-us/news/press-releases/employer-demand-for-tech-talent-reaches-three-year-high-comptia-analysis-finds/"
+      }
+    },
+    {
+      "name": "Cloud, DevOps, platform and systems",
+      "direction": "up",
+      "headline": "Steady to rising",
+      "evidence": "Systems engineers rank second and DevOps engineers fifth by US posting volume. A report cites a 38% supply gap in platform engineering in India.",
+      "where": "US, India",
+      "source": {
+        "name": "CompTIA",
+        "url": "https://www.comptia.org/en-us/about-us/news/press-releases/employer-demand-for-tech-talent-reaches-three-year-high-comptia-analysis-finds/"
+      }
+    },
+    {
+      "name": "Cybersecurity",
+      "direction": "mixed",
+      "headline": "Record openings, fewer generic postings",
+      "evidence": "CyberSeek counts 514,359 US openings in the 12 months to March 2026, up 12%. CyberSN counts postings down 26.4% in January to September 2026, while AI security engineer demand rose 268.3%.",
+      "where": "US, Gulf, India GCCs",
+      "source": {
+        "name": "SecurityWeek via Digg",
+        "url": "https://digg.com/tech/a7n81401"
+      }
+    },
+    {
+      "name": "General software engineers",
+      "direction": "mixed",
+      "headline": "Recovering, still below peak",
+      "evidence": "Still the most-posted US tech role, with 47,598 new openings in September, but about 25% below the February 2020 level. Up in the UK, down in Germany and France.",
+      "where": "US, UK, India GCCs, Australia",
+      "source": {
+        "name": "CompTIA",
+        "url": "https://www.comptia.org/en-us/about-us/news/press-releases/employer-demand-for-tech-talent-reaches-three-year-high-comptia-analysis-finds/"
+      }
+    },
+    {
+      "name": "Tech support",
+      "direction": "flat",
+      "headline": "Steady, high volume",
+      "evidence": "Third by US posting volume in September 2026.",
+      "where": "US",
+      "source": {
+        "name": "CompTIA",
+        "url": "https://www.comptia.org/en-us/about-us/news/press-releases/employer-demand-for-tech-talent-reaches-three-year-high-comptia-analysis-finds/"
+      }
+    },
+    {
+      "name": "Entry-level and junior roles",
+      "direction": "down",
+      "headline": "Weakest segment almost everywhere",
+      "evidence": "US senior postings are up 13.5% since January 2025 while entry-level postings are down 6.3%. India GCC hiring of 0 to 3 year professionals is the exception, up 18%.",
+      "where": "India (relatively), nearshore hubs",
+      "source": {
+        "name": "Uvik, citing Indeed",
+        "url": "https://uvik.net/?p=7096"
+      }
+    }
+  ],
+  "charts": {
+    "usStates": {
+      "title": "Projected 2026 tech jobs added, by state",
+      "unit": "jobs",
+      "source": {
+        "name": "CompTIA, State of the Tech Workforce 2026",
+        "url": "https://www.comptia.org/en/about-us/news/press-releases/Key-employment-metrics-market-insights-and-the-impact-of-AI-revealed-in-CompTIA-State-of-Tech-Workforce-2026-report/"
+      },
+      "items": [
+        {
+          "label": "Texas",
+          "value": 32238
+        },
+        {
+          "label": "California",
+          "value": 16949
+        },
+        {
+          "label": "Florida",
+          "value": 14453
+        },
+        {
+          "label": "New York",
+          "value": 13566
+        },
+        {
+          "label": "Washington",
+          "value": 9524
+        }
+      ]
+    },
+    "usMetros": {
+      "title": "Projected 2026 tech jobs added, by metro area",
+      "unit": "jobs",
+      "source": {
+        "name": "CompTIA, State of the Tech Workforce 2026",
+        "url": "https://www.comptia.org/en/about-us/news/press-releases/Key-employment-metrics-market-insights-and-the-impact-of-AI-revealed-in-CompTIA-State-of-Tech-Workforce-2026-report/"
+      },
+      "items": [
+        {
+          "label": "New York City",
+          "value": 11317
+        },
+        {
+          "label": "Dallas",
+          "value": 11013
+        },
+        {
+          "label": "Austin",
+          "value": 5676
+        },
+        {
+          "label": "Seattle",
+          "value": 5039
+        },
+        {
+          "label": "San Francisco",
+          "value": 3906
+        }
+      ]
+    },
+    "indiaCities": {
+      "title": "Share of India GCC hiring, by city",
+      "unit": "%",
+      "source": {
+        "name": "Business Today, citing foundit",
+        "url": "https://www.businesstoday.in/jobs/story/at-5-1-lakh-jobs-indias-global-capability-centre-hiring-boom-scales-new-peak-540328-2026-07-01"
+      },
+      "items": [
+        {
+          "label": "Bengaluru",
+          "value": 30,
+          "growth": 10
+        },
+        {
+          "label": "Hyderabad",
+          "value": 15,
+          "growth": 15
+        },
+        {
+          "label": "Tier-2 cities, combined",
+          "value": 15,
+          "growth": 23
+        },
+        {
+          "label": "Pune",
+          "value": 12,
+          "growth": 11
+        },
+        {
+          "label": "Mumbai",
+          "value": 11,
+          "growth": 8
+        },
+        {
+          "label": "Chennai",
+          "value": 9,
+          "growth": null
+        },
+        {
+          "label": "Delhi NCR",
+          "value": 8,
+          "growth": null
+        }
+      ]
+    },
+    "indiaFunctions": {
+      "title": "Share of India GCC hiring, by function",
+      "unit": "%",
+      "source": {
+        "name": "Business Today, citing foundit",
+        "url": "https://www.businesstoday.in/jobs/story/at-5-1-lakh-jobs-indias-global-capability-centre-hiring-boom-scales-new-peak-540328-2026-07-01"
+      },
+      "items": [
+        {
+          "label": "IT and software development",
+          "value": 31
+        },
+        {
+          "label": "AI, data science and analytics",
+          "value": 18,
+          "growth": 38
+        },
+        {
+          "label": "Engineering and product R&D",
+          "value": 16
+        },
+        {
+          "label": "Cloud and cybersecurity",
+          "value": 11
+        }
+      ]
+    }
+  },
+  "entryLevel": {
+    "note": "No official ranking exists. This order combines one US postings study with survey and platform data; ranks three to five are a judgment call.",
+    "items": [
+      {
+        "role": "Data analyst",
+        "evidence": "Highest entry and junior share of postings, 21.8%, in 20,867 US tech postings from March to May 2026.",
+        "source": {
+          "name": "Skillenai via CPA Practice Advisor",
+          "url": "https://www.cpapracticeadvisor.com/2026/08/06/top-tech-entry-jobs-are-data-analysts-and-software-engineers/188151/"
+        }
+      },
+      {
+        "role": "Junior software engineer",
+        "evidence": "Most volume (6,681 postings in that dataset) and a 14.3% entry share, but a shrinking slice of new-grad hiring: 6.2% of hires in 2022, 5.4% in 2026.",
+        "source": {
+          "name": "Gusto",
+          "url": "https://gusto.com/resources/gusto-insights/new-grad-hiring-report-2026"
+        }
+      },
+      {
+        "role": "IT support and help desk",
+        "evidence": "Described as the one IT role that routinely hires people with no experience. Tech-support postings were reported up 16.1% from January to April 2026.",
+        "source": {
+          "name": "IT Support Group",
+          "url": "https://thisisanitsupportgroup.beehiiv.com/p/the-it-job-market-just-split-in-half-and-we-built-you-a-board"
+        }
+      },
+      {
+        "role": "Entry-level cybersecurity (SOC and GRC analyst)",
+        "evidence": "High demand, but postings labeled entry level often ask for 3+ years of experience.",
+        "source": {
+          "name": "QuickStart",
+          "url": "https://www.quickstart.com/blog/cyber-security/best-entry-level-cybersecurity-jobs/"
+        }
+      },
+      {
+        "role": "AI-adjacent starter roles",
+        "evidence": "Fastest growing from a small base. AI engineer tops LinkedIn's fast-growing entry-level list, and 49% of surveyed hiring managers named AI security and risk analyst the most in-demand entry-level AI role.",
+        "source": {
+          "name": "HR Executive",
+          "url": "https://hrexecutive.com/ai-is-reshaping-entry-level-hiring-where-will-new-grads-go/"
+        }
+      }
+    ],
+    "lateral": "Platform engineer, SRE, backend engineer and ML engineer are more often lateral moves than first jobs.",
+    "context": "Only 12.5% of software and ICT postings are entry level, against 38.3% across all occupations."
+  },
+  "caveats": [
+    "Postings are not hires. CompTIA's research lead warns that postings do not always lead to hiring.",
+    "Sources conflict. Early-2026 layoff counts range from about 45,000 to 78,557 because trackers and time windows differ.",
+    "There is no like-for-like India index. The Indeed Hiring Lab trackers used here do not include India, so India figures come from foundit, company filings and recruiter surveys.",
+    "Confidence labels: High is a primary source, Medium is a published tracker or press report, Low is a recruiter or staffing vendor with a commercial interest."
+  ],
+  "sources": [
+    {
+      "name": "CompTIA, employer demand at three-year high (Oct 2, 2026)",
+      "url": "https://www.comptia.org/en-us/about-us/news/press-releases/employer-demand-for-tech-talent-reaches-three-year-high-comptia-analysis-finds/",
+      "opened": true
+    },
+    {
+      "name": "CompTIA, State of the Tech Workforce 2026",
+      "url": "https://www.comptia.org/en/about-us/news/press-releases/Key-employment-metrics-market-insights-and-the-impact-of-AI-revealed-in-CompTIA-State-of-Tech-Workforce-2026-report/",
+      "opened": true
+    },
+    {
+      "name": "Business Today, India GCC hiring (Jul 1, 2026)",
+      "url": "https://www.businesstoday.in/jobs/story/at-5-1-lakh-jobs-indias-global-capability-centre-hiring-boom-scales-new-peak-540328-2026-07-01",
+      "opened": true
+    },
+    {
+      "name": "Free Press Journal, Indian IT Q2 FY27 headcount",
+      "url": "https://www.freepressjournal.in/business/indian-it-giants-add-14000-employees-in-q2",
+      "opened": true
+    },
+    {
+      "name": "Indeed Hiring Lab postings dataset (Cotera mirror)",
+      "url": "https://cotera.co/datasets/library/tech-job-postings-index",
+      "opened": false
+    },
+    {
+      "name": "Orosz, state of the software engineering job market",
+      "url": "https://news.lavx.hu/article/state-of-the-software-engineering-job-market-in-2026",
+      "opened": false
+    },
+    {
+      "name": "Old/New, global software postings chart",
+      "url": "https://www.drorpoleg.com/charts/global-software-canary/",
+      "opened": false
+    },
+    {
+      "name": "BetaKit, Canada tech postings",
+      "url": "https://betakit.com/canadian-tech-job-listings-plunge-below-pre-pandemic-levels-and-ai-may-be-the-culprit/",
+      "opened": false
+    },
+    {
+      "name": "Digg, CyberSN cybersecurity postings (via SecurityWeek)",
+      "url": "https://digg.com/tech/a7n81401",
+      "opened": false
+    },
+    {
+      "name": "Uvik, seniority data from Indeed",
+      "url": "https://uvik.net/?p=7096",
+      "opened": false
+    },
+    {
+      "name": "Khaleej Times, RemotePass Gulf hiring report",
+      "url": "https://www.khaleejtimes.com/business/uae-led-the-global-hiring-surge-in-2025-remotepass-report",
+      "opened": false
+    },
+    {
+      "name": "Newsbytes PH, Philippine offshoring forecast",
+      "url": "https://newsbytes.ph/2025/09/20/ph-offshoring-industry-seen-to-hit-61b-by-2030-add-nearly-1-m-jobs/",
+      "opened": false
+    },
+    {
+      "name": "KEYT/Near, US hiring in Latin America",
+      "url": "https://keyt.com/news/money-and-business/stacker-money/2026/01/29/five-trends-shaping-the-rise-in-us-companies-hiring-in-latin-america/",
+      "opened": false
+    },
+    {
+      "name": "Skillenai via CPA Practice Advisor, entry-level tech roles",
+      "url": "https://www.cpapracticeadvisor.com/2026/08/06/top-tech-entry-jobs-are-data-analysts-and-software-engineers/188151/",
+      "opened": false
+    },
+    {
+      "name": "Gusto, new grad hiring report 2026",
+      "url": "https://gusto.com/resources/gusto-insights/new-grad-hiring-report-2026",
+      "opened": false
+    },
+    {
+      "name": "HR Executive, AI and entry-level hiring",
+      "url": "https://hrexecutive.com/ai-is-reshaping-entry-level-hiring-where-will-new-grads-go/",
+      "opened": false
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Hiring Tracker</title>
+<meta name="description" content="Where tech hiring is moving, by location and role, with sources and a weekly refresh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFBFC; --surface:#FFFFFF; --ink:#0E1A2B; --ink2:#46546A; --muted:#66748A;
+  --line:#DCE2EB; --accent:#1B3A6B; --accent-soft:#E8EEF8;
+  --up:#1B3A6B; --down:#A23B2A; --flat:#5B6678; --mix:#7A5A12;
+  --bar:#1B3A6B; --focus:#1B3A6B;
+  --display:"Space Grotesk",system-ui,sans-serif; --body:"Public Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+:root[data-theme="dark"]{
+  --bg:#0B111E; --surface:#111A2C; --ink:#E8ECF3; --ink2:#B4BFD0; --muted:#93A0B5;
+  --line:#25324A; --accent:#9DB9F0; --accent-soft:#16233D;
+  --up:#9DB9F0; --down:#F0A090; --flat:#A3AEC0; --mix:#E2C27A;
+  --bar:#7FA3EA; --focus:#9DB9F0;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B111E; --surface:#111A2C; --ink:#E8ECF3; --ink2:#B4BFD0; --muted:#93A0B5;
+    --line:#25324A; --accent:#9DB9F0; --accent-soft:#16233D;
+    --up:#9DB9F0; --down:#F0A090; --flat:#A3AEC0; --mix:#E2C27A;
+    --bar:#7FA3EA; --focus:#9DB9F0;
+  }
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:2px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.brand{font:600 15px/1 var(--display);letter-spacing:.01em}
+button{font:inherit;color:inherit;background:none;border:1px solid var(--line);border-radius:6px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--ink2)}
+button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.hero{padding:56px 0 36px}
+h1{font:700 clamp(34px,6vw,60px)/1.05 var(--display);letter-spacing:-.02em;margin:0 0 20px;max-width:16ch}
+.lede{font-size:18px;color:var(--ink2);max-width:62ch;margin:0 0 24px}
+.stamp{display:inline-flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--surface);font:400 14px/1.4 var(--mono)}
+.stamp strong{font-weight:500;color:var(--ink)}
+.stamp span{color:var(--ink2)}
+.stale{display:none;margin:14px 0 0;padding:10px 14px;border:1px solid var(--down);color:var(--down);font-size:14px;max-width:62ch}
+.stale.on{display:block}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font:600 clamp(22px,3vw,30px)/1.2 var(--display);letter-spacing:-.01em;margin:0 0 8px}
+.sub{color:var(--ink2);max-width:66ch;margin:0 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media (max-width:860px){.board{grid-template-columns:1fr}}
+.col h3{font:600 15px/1.2 var(--display);margin:0 0 4px;display:flex;gap:8px;align-items:baseline}
+.col h3 small{font:400 13px var(--mono);color:var(--muted)}
+.col .empty{color:var(--muted);font-size:14px;margin:10px 0}
+details.item{border-top:1px solid var(--line);padding:12px 0}
+details.item:last-child{border-bottom:1px solid var(--line)}
+details.item summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:baseline}
+details.item summary::-webkit-details-marker{display:none}
+.glyph{font:500 13px/1 var(--mono);display:inline-block;min-width:1.2em}
+.g-up{color:var(--up)} .g-down{color:var(--down)} .g-flat{color:var(--flat)} .g-mixed{color:var(--mix)}
+.nm{font:600 16px/1.3 var(--display)}
+.hd{grid-column:2;color:var(--ink2);font-size:14px}
+.body{padding:10px 0 0 28px;font-size:14px;color:var(--ink2)}
+.meta{font:400 12px/1.5 var(--mono);color:var(--muted);margin-top:8px}
+.meta a{color:inherit}
+.rows .item{border-top:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:6px 28px}
+.rows .item:last-child{border-bottom:1px solid var(--line)}
+@media (max-width:760px){.rows .item{grid-template-columns:1fr}}
+.rows .nm{display:flex;gap:8px;align-items:baseline}
+.rows p{margin:0;font-size:15px;color:var(--ink2)}
+.rows .hd2{font-weight:600;color:var(--ink);font-size:15px;margin-bottom:2px}
+.charts{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 40px}
+@media (max-width:860px){.charts{grid-template-columns:1fr}}
+.chart h3{font:600 17px/1.3 var(--display);margin:0 0 14px}
+.bars{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:minmax(90px,150px) 1fr auto;gap:10px;align-items:center;font-size:14px;cursor:default}
+.bar .lab{overflow-wrap:anywhere}
+.bar .track{height:14px}
+.bar .fill{height:100%;background:var(--bar);border-radius:0 4px 4px 0;min-width:2px}
+.bar .val{font:400 13px var(--mono);color:var(--ink);white-space:nowrap}
+.bar .val em{font-style:normal;color:var(--muted)}
+.bar:hover .fill,.bar:focus-visible .fill{filter:brightness(1.15)}
+.chart .src{margin-top:12px;font:400 12px var(--mono);color:var(--muted)}
+.chart .src a{color:inherit}
+.tbtn{margin-top:10px;font-size:13px;padding:4px 10px}
+table.dt{border-collapse:collapse;width:100%;margin-top:10px;font-size:14px}
+table.dt th,table.dt td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+table.dt td.n,table.dt th.n{text-align:right;font-family:var(--mono)}
+.dt[hidden]{display:none}
+#tip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--bg);font:400 13px/1.4 var(--mono);padding:6px 10px;border-radius:4px;max-width:260px;opacity:0;transition:opacity .08s}
+#tip.on{opacity:1}
+ol.rank{list-style:none;margin:0;padding:0}
+ol.rank li{display:grid;grid-template-columns:44px 1fr;gap:4px 16px;padding:16px 0;border-top:1px solid var(--line)}
+ol.rank li:last-child{border-bottom:1px solid var(--line)}
+ol.rank .n{font:600 28px/1 var(--display);color:var(--accent)}
+ol.rank .nm{margin-bottom:2px}
+ol.rank p{margin:0;font-size:15px;color:var(--ink2)}
+.note{margin:18px 0 0;color:var(--ink2);font-size:15px;max-width:66ch}
+ul.cav{margin:0;padding-left:20px;color:var(--ink2);max-width:70ch}
+ul.cav li{margin:6px 0}
+ul.srcs{list-style:none;padding:0;margin:0;columns:2;column-gap:40px;font-size:14px}
+@media (max-width:760px){ul.srcs{columns:1}}
+ul.srcs li{break-inside:avoid;margin:0 0 8px}
+.tag{font:400 11px var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 5px;margin-left:6px;white-space:nowrap}
+footer{padding:30px 0 60px;border-top:1px solid var(--line);color:var(--ink2);font-size:14px}
+footer p{max-width:70ch;margin:0 0 10px}
+.err{padding:40px 0;color:var(--down)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="brand">Tech Hiring Tracker</span>
+    <button id="theme" type="button" aria-label="Switch between light and dark mode">Theme</button>
+  </header>
+  <main id="app" aria-live="polite">
+    <p class="err" id="loading">Loading data…</p>
+  </main>
+</div>
+<div id="tip" role="tooltip"></div>
+<script>
+(function(){
+"use strict";
+
+/* ---------- theme ---------- */
+var root=document.documentElement;
+function applyTheme(t){ if(t){root.setAttribute("data-theme",t);} else {root.removeAttribute("data-theme");} }
+try{ var saved=localStorage.getItem("tht-theme"); if(saved){applyTheme(saved);} }catch(e){}
+document.getElementById("theme").addEventListener("click",function(){
+  var cur=root.getAttribute("data-theme");
+  if(!cur){ cur=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"; }
+  var next=cur==="dark"?"light":"dark";
+  applyTheme(next);
+  try{localStorage.setItem("tht-theme",next);}catch(e){}
+});
+
+/* ---------- helpers ---------- */
+function h(tag,attrs){
+  var el=document.createElement(tag);
+  if(attrs){ for(var k in attrs){ if(k==="text"){el.textContent=attrs[k];} else if(k==="class"){el.className=attrs[k];} else if(attrs[k]!==false&&attrs[k]!=null){el.setAttribute(k,attrs[k]);} } }
+  for(var i=2;i<arguments.length;i++){ var c=arguments[i]; if(c==null||c===false) continue; el.appendChild(typeof c==="string"?document.createTextNode(c):c); }
+  return el;
+}
+function safeUrl(u){ return /^https?:\/\//i.test(u)?u:"#"; }
+function link(src){ return h("a",{href:safeUrl(src.url),target:"_blank",rel:"noopener noreferrer",text:src.name}); }
+var GLYPH={up:"▲",down:"▼",flat:"■",mixed:"◆"};
+var LABEL={up:"Rising",down:"Falling",flat:"Flat",mixed:"Mixed"};
+function glyph(dir){ return h("span",{class:"glyph g-"+dir,"aria-hidden":"true",text:GLYPH[dir]||"•"}); }
+function dirLabel(dir){ return h("span",{class:"sr",text:(LABEL[dir]||dir)+": "}); }
+var fmt=new Intl.NumberFormat("en-US");
+function parseDate(s){ var p=s.split("-"); return new Date(+p[0],+p[1]-1,+p[2]); }
+function longDate(d){ return d.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"}); }
+function daysSince(d){ var now=new Date(); var a=new Date(now.getFullYear(),now.getMonth(),now.getDate()); return Math.round((a-d)/86400000); }
+function ago(n){ if(n<=0) return "today"; if(n===1) return "yesterday"; return n+" days ago"; }
+
+/* ---------- tooltip ---------- */
+var tip=document.getElementById("tip");
+function showTip(text,x,y){
+  tip.textContent=text; tip.classList.add("on");
+  var w=tip.offsetWidth, hgt=tip.offsetHeight;
+  var left=Math.min(Math.max(8,x+12),window.innerWidth-w-8);
+  var top=y-hgt-12; if(top<8){top=y+16;}
+  tip.style.left=left+"px"; tip.style.top=top+"px";
+}
+function hideTip(){ tip.classList.remove("on"); }
+function bindTip(el,text){
+  el.addEventListener("mousemove",function(e){showTip(text,e.clientX,e.clientY);});
+  el.addEventListener("mouseleave",hideTip);
+  el.addEventListener("focus",function(){var r=el.getBoundingClientRect();showTip(text,r.left+r.width/2,r.top);});
+  el.addEventListener("blur",hideTip);
+}
+
+/* ---------- sections ---------- */
+function stampBlock(meta){
+  var d=parseDate(meta.asOf), n=daysSince(d), cadence=meta.refreshCadenceDays||7;
+  var next=new Date(d.getTime()); next.setDate(next.getDate()+cadence);
+  var box=h("div",null,
+    h("div",{class:"stamp"},
+      h("strong",{text:"Last updated "+longDate(d)}),
+      h("span",{text:"("+ago(n)+")"}),
+      h("span",{text:"Re-checked every "+(cadence===7?"week":cadence+" days")+". Next check due about "+longDate(next)+"."})
+    ),
+    h("p",{class:"stale"+(n>cadence*2?" on":""),role:"status",text:"This page was last updated "+n+" days ago, which is longer than its usual cycle. Treat the figures as possibly out of date."})
+  );
+  return box;
+}
+
+function boardSection(data){
+  var regions=["All"]; data.locations.forEach(function(l){ if(regions.indexOf(l.region)<0) regions.push(l.region); });
+  var state={region:"All"};
+  var sec=h("section",{id:"locations"});
+  sec.appendChild(h("h2",{text:"Where hiring is moving"}));
+  sec.appendChild(h("p",{class:"sub",text:"Each place is sorted by the direction of its recent tech hiring. Open a row for the evidence and source."}));
+  var chips=h("div",{class:"chips",role:"group","aria-label":"Filter by region"});
+  var board=h("div",{class:"board"});
+  function render(){
+    board.textContent="";
+    var groups=[
+      {key:"up",title:"Rising",test:function(l){return l.direction==="up";}},
+      {key:"mix",title:"Mixed or flat",test:function(l){return l.direction==="mixed"||l.direction==="flat";}},
+      {key:"down",title:"Falling",test:function(l){return l.direction==="down";}}
+    ];
+    groups.forEach(function(g){
+      var items=data.locations.filter(function(l){return (state.region==="All"||l.region===state.region)&&g.test(l);});
+      var col=h("div",{class:"col"},h("h3",null,g.title,h("small",{text:String(items.length)})));
+      if(!items.length){ col.appendChild(h("p",{class:"empty",text:"None in this view."})); }
+      items.forEach(function(l){
+        col.appendChild(h("details",{class:"item"},
+          h("summary",null,glyph(l.direction),h("span",{class:"nm"},dirLabel(l.direction),l.name),h("span",{class:"hd",text:l.headline})),
+          h("div",{class:"body"},
+            h("div",{text:l.evidence}),
+            h("div",{class:"meta"},"Source: ",link(l.source)," · Confidence: "+l.confidence+" · "+l.region)
+          )
+        ));
+      });
+      board.appendChild(col);
+    });
+  }
+  regions.forEach(function(r){
+    var b=h("button",{type:"button","aria-pressed":r==="All"?"true":"false",text:r});
+    b.addEventListener("click",function(){
+      state.region=r;
+      Array.prototype.forEach.call(chips.children,function(c){c.setAttribute("aria-pressed",c===b?"true":"false");});
+      render();
+    });
+    chips.appendChild(b);
+  });
+  sec.appendChild(chips); sec.appendChild(board); render();
+  return sec;
+}
+
+function rolesSection(data){
+  var sec=h("section",{id:"roles"});
+  sec.appendChild(h("h2",{text:"Which roles are growing"}));
+  sec.appendChild(h("p",{class:"sub",text:"Roles, ordered from rising to falling, with the strongest locations for each."}));
+  var order={up:0,mixed:1,flat:2,down:3};
+  var roles=data.roles.slice().sort(function(a,b){return order[a.direction]-order[b.direction];});
+  var chips=h("div",{class:"chips",role:"group","aria-label":"Filter by direction"});
+  var list=h("div",{class:"rows"});
+  var filt="all";
+  function render(){
+    list.textContent="";
+    roles.filter(function(r){return filt==="all"||r.direction===filt;}).forEach(function(r){
+      list.appendChild(h("div",{class:"item"},
+        h("div",{class:"nm"},glyph(r.direction),dirLabel(r.direction),r.name),
+        h("div",null,
+          h("div",{class:"hd2",text:r.headline}),
+          h("p",{text:r.evidence}),
+          h("div",{class:"meta"},"Strongest in: "+r.where+" · Source: ",link(r.source))
+        )
+      ));
+    });
+  }
+  [["all","All"],["up","Rising"],["mixed","Mixed"],["flat","Flat"],["down","Falling"]].forEach(function(p){
+    var b=h("button",{type:"button","aria-pressed":p[0]==="all"?"true":"false",text:p[1]});
+    b.addEventListener("click",function(){
+      filt=p[0];
+      Array.prototype.forEach.call(chips.children,function(c){c.setAttribute("aria-pressed",c===b?"true":"false");});
+      render();
+    });
+    chips.appendChild(b);
+  });
+  sec.appendChild(chips); sec.appendChild(list); render();
+  return sec;
+}
+
+function chartBlock(c){
+  var max=0; c.items.forEach(function(i){ if(i.value>max) max=i.value; });
+  var isPct=c.unit==="%";
+  function fv(v){ return isPct?v+"%":"+"+fmt.format(v); }
+  var bars=h("div",{class:"bars"});
+  c.items.forEach(function(i){
+    var tipText=i.label+": "+(isPct?i.value+"% of hiring":fv(i.value)+" tech jobs")+(i.growth!=null?" · +"+i.growth+"% year over year":"");
+    var row=h("div",{class:"bar",tabindex:"0",role:"img","aria-label":tipText},
+      h("span",{class:"lab",text:i.label}),
+      h("span",{class:"track"},h("span",{class:"fill",style:"display:block;width:"+(i.value/max*100).toFixed(1)+"%"})),
+      h("span",{class:"val"},fv(i.value),i.growth!=null?h("em",{text:"  +"+i.growth+"%"}):null)
+    );
+    bindTip(row,tipText);
+    bars.appendChild(row);
+  });
+  var hasGrowth=c.items.some(function(i){return i.growth!=null;});
+  var thead=h("tr",null,h("th",{text:"Item"}),h("th",{class:"n",text:isPct?"Share of hiring (%)":"Projected jobs added"}),hasGrowth?h("th",{class:"n",text:"Growth, year over year (%)"}):null);
+  var tbody=h("tbody");
+  c.items.forEach(function(i){ tbody.appendChild(h("tr",null,h("td",{text:i.label}),h("td",{class:"n",text:isPct?String(i.value):fmt.format(i.value)}),hasGrowth?h("td",{class:"n",text:i.growth!=null?String(i.growth):"not given"}):null)); });
+  var table=h("table",{class:"dt",hidden:"hidden"},h("caption",{class:"sr",text:c.title}),h("thead",null,thead),tbody);
+  var btn=h("button",{type:"button",class:"tbtn","aria-pressed":"false",text:"Show as table"});
+  btn.addEventListener("click",function(){
+    var on=btn.getAttribute("aria-pressed")!=="true";
+    btn.setAttribute("aria-pressed",on?"true":"false");
+    btn.textContent=on?"Show as chart":"Show as table";
+    if(on){table.removeAttribute("hidden");bars.style.display="none";} else {table.setAttribute("hidden","hidden");bars.style.display="";}
+  });
+  return h("div",{class:"chart"},h("h3",{text:c.title}),bars,table,btn,h("div",{class:"src"},"Source: ",link(c.source),hasGrowth?" · small figure after the value is year-over-year growth in %":""));
+}
+
+function chartsSection(data){
+  var sec=h("section",{id:"where"});
+  sec.appendChild(h("h2",{text:"Where the jobs are being added"}));
+  sec.appendChild(h("p",{class:"sub",text:"US figures are CompTIA's 2026 projections. India figures are shares of 2026 capability-centre hiring."}));
+  var grid=h("div",{class:"charts"});
+  ["usStates","usMetros","indiaCities","indiaFunctions"].forEach(function(k){ if(data.charts[k]) grid.appendChild(chartBlock(data.charts[k])); });
+  sec.appendChild(grid);
+  return sec;
+}
+
+function entrySection(data){
+  var e=data.entryLevel;
+  var sec=h("section",{id:"entry"});
+  sec.appendChild(h("h2",{text:"Entry-level and early-career roles (US)"}));
+  sec.appendChild(h("p",{class:"sub",text:e.note}));
+  var ol=h("ol",{class:"rank"});
+  e.items.forEach(function(it,i){
+    ol.appendChild(h("li",null,h("span",{class:"n","aria-hidden":"true",text:String(i+1)}),h("div",null,h("div",{class:"nm",text:it.role}),h("p",{text:it.evidence}),h("div",{class:"meta"},"Source: ",link(it.source)))));
+  });
+  sec.appendChild(ol);
+  sec.appendChild(h("p",{class:"note",text:e.lateral+" "+e.context}));
+  return sec;
+}
+
+function caveatsSection(data){
+  var sec=h("section",{id:"caveats"});
+  sec.appendChild(h("h2",{text:"How to read these numbers"}));
+  var ul=h("ul",{class:"cav"});
+  data.caveats.forEach(function(c){ ul.appendChild(h("li",{text:c})); });
+  sec.appendChild(ul);
+  var s=h("ul",{class:"srcs"});
+  data.sources.forEach(function(x){ s.appendChild(h("li",null,link(x),h("span",{class:"tag",text:x.opened?"opened and checked":"read in search results"}))); });
+  sec.appendChild(h("h2",{style:"margin-top:36px",text:"Sources"}));
+  sec.appendChild(s);
+  return sec;
+}
+
+function footer(data){
+  var d=parseDate(data.meta.asOf);
+  return h("footer",null,
+    h("p",{text:"Last updated "+longDate(d)+". Each refresh re-checks the sources listed above and updates the figures. A figure describes the period its own source covers, which can be earlier than the update date."}),
+    h("p",null,"The data behind this page is one file, ",h("a",{href:"data.json",text:"data.json"}),".")
+  );
+}
+
+/* ---------- boot ---------- */
+var app=document.getElementById("app");
+fetch("data.json",{cache:"no-cache"}).then(function(r){
+  if(!r.ok) throw new Error("HTTP "+r.status);
+  return r.json();
+}).then(function(data){
+  app.textContent="";
+  var hero=h("div",{class:"hero"},
+    h("h1",{text:data.meta.title}),
+    h("p",{class:"lede",text:data.meta.summary}),
+    stampBlock(data.meta)
+  );
+  app.appendChild(hero);
+  app.appendChild(boardSection(data));
+  app.appendChild(rolesSection(data));
+  app.appendChild(chartsSection(data));
+  app.appendChild(entrySection(data));
+  app.appendChild(caveatsSection(data));
+  app.appendChild(footer(data));
+  document.title="Tech Hiring Tracker · updated "+data.meta.asOf;
+}).catch(function(err){
+  app.textContent="";
+  app.appendChild(h("p",{class:"err",text:"Could not load data.json ("+err.message+"). If you opened this file straight from disk, serve the folder with a local web server instead, for example: npx serve ."}));
+});
+})();
+</script>
+</body>
+</html>
