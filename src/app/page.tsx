@@ -80,6 +80,19 @@ const projects = [
     stack: ["DynamoDB", "S3", "Automation"],
     index: "03",
   },
+  {
+    tag: "Personal project",
+    title: "Inbox to Action",
+    description:
+      "Triage was eating strategy time. I built a pipeline that turns task-related emails, including Zoom, Meet and Teams invites, into one prioritized Notion to-do list, with Claude reading free-form requests and a custom Today page that syncs both ways.",
+    stats: [
+      { value: "156", label: "automated tests" },
+      { value: "6+", label: "call platforms" },
+    ],
+    stack: ["Python", "Claude API", "Notion", "Zapier", "Vercel"],
+    index: "04",
+    href: "https://github.com/j2jun/inbox-to-action",
+  },
 ];
 
 const skills: [string, string[]][] = [
@@ -279,7 +292,7 @@ export default function Home() {
           </div>
           <p className="mb-14 ml-8 flex flex-wrap items-baseline justify-between gap-3 max-w-none text-base text-[var(--text-muted)]">
             <span className="max-w-xl">
-              A closer look at three projects drawn from my professional experience.
+              A closer look at work from my professional experience, plus a recent personal build.
             </span>
             <a
               href="https://github.com/j2jun"
@@ -291,7 +304,7 @@ export default function Home() {
             </a>
 <a href="/job-market/index.html" className="flex items-center gap-2 whitespace-nowrap font-mono text-[13px] font-medium text-[var(--accent)]">Tech hiring tracker &rarr;</a>
           </p>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {projects.map((p) => (
               <div
                 key={p.title}
@@ -332,6 +345,16 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                {"href" in p && p.href && (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto font-mono text-[13px] font-medium text-[var(--accent)]"
+                  >
+                    View code &rarr;
+                  </a>
+                )}
               </div>
             ))}
           </div>
