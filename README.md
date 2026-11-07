@@ -43,8 +43,8 @@ Also on the site: a live **[tech hiring tracker](https://josephjun-portfolio.ver
 ![Vercel](https://img.shields.io/badge/Vercel-000?logo=vercel)
 
 - **Next.js 16** App Router, TypeScript, single-page layout driven by plain data arrays in [`src/app/page.tsx`](src/app/page.tsx)
-- **Tailwind CSS v4**, single-column minimal layout with automatic light/dark
-- **Instrument Sans** via next/font; project rows show a floating preview on hover
+- **Day/night switch**: day shows professional work, night shows side projects; opens on the visitor's own sky
+- Canvas starfield with shooting stars, CSS sun, moon and drifting clouds (no 3D libraries); Tailwind CSS v4, Instrument Sans
 - Dynamic **Open Graph image** ([`opengraph-image.tsx`](src/app/opengraph-image.tsx)) for link previews
 - **Vercel** deploys on every push, with preview deployments per PR
 

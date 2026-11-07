@@ -1,41 +1,52 @@
 @import "tailwindcss";
 
+/* Day is the default; night overrides. data-mode is set before paint in layout.tsx. */
 :root {
-  --bg: #fdfdfc;
-  --fg: #1b1b1f;
-  --muted: #6f6f78;
-  --faint: #a3a3ab;
-  --line: #e9e9ec;
-  --hover: #f3f3f5;
-  --live: #16a34a;
+  --bg: #eef3f8;
+  --fg: #0d1722;
+  --muted: #5b6b7b;
+  --faint: #93a1b0;
+  --line: rgba(13, 23, 34, 0.1);
+  --panel: #ffffff;
+  --sky-top: #5f9fd8;
+  --sky-bottom: #d7e8f5;
+  --chrome: rgba(255, 255, 255, 0.72);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #101012;
-    --fg: #ececef;
-    --muted: #92929c;
-    --faint: #5c5c66;
-    --line: #232328;
-    --hover: #18181c;
-    --live: #4ade80;
-  }
+[data-mode="night"] {
+  --bg: #05070c;
+  --fg: #e8edf4;
+  --muted: #8793a3;
+  --faint: #4f5a68;
+  --line: rgba(232, 237, 244, 0.1);
+  --panel: #0d1119;
+  --sky-top: #02040a;
+  --sky-bottom: #0b1426;
+  --chrome: rgba(8, 11, 18, 0.72);
 }
 
 @theme inline {
   --font-sans: var(--font-instrument);
+  --font-mono: var(--font-plex-mono);
   --color-bg: var(--bg);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-faint: var(--faint);
   --color-line: var(--line);
-  --color-hover: var(--hover);
-  --color-live: var(--live);
+  --color-panel: var(--panel);
+  --color-chrome: var(--chrome);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease;
 }
 
 ::selection {
@@ -46,10 +57,15 @@ body {
 :focus-visible {
   outline: 2px solid var(--fg);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
-/* Text links: quiet underline that firms up on hover. */
+/* Content that belongs to one mode only. */
+[data-mode="day"] .night-only,
+[data-mode="night"] .day-only {
+  display: none;
+}
+
 .link {
   text-decoration: underline;
   text-decoration-color: var(--faint);
@@ -60,37 +76,89 @@ body {
   text-decoration-color: var(--fg);
 }
 
-/* The single page-load moment: blocks settle in one after another. */
+/* ---------- Sky ---------- */
+
+.sky {
+  background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+  transition: background 0.8s ease;
+}
+
+.stars {
+  transition: opacity 0.8s ease;
+}
+[data-mode="day"] .stars {
+  opacity: 0;
+}
+
+.sun,
+.moon {
+  transition:
+    opacity 0.8s ease,
+    transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.sun {
+  background: radial-gradient(circle, #fffdf3 0 18%, rgba(255, 244, 205, 0.55) 30%, transparent 68%);
+}
+.moon {
+  border-radius: 9999px;
+  box-shadow:
+    inset -9px 3px 0 0 #e9edf5,
+    0 0 60px 18px rgba(200, 215, 255, 0.12);
+}
+[data-mode="day"] .moon,
+[data-mode="night"] .sun {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9), transparent 70%);
+  filter: blur(18px);
+  animation: drift linear infinite;
+  transition: opacity 0.8s ease;
+}
+[data-mode="night"] .cloud {
+  opacity: 0.08;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-30vw);
+  }
+  to {
+    transform: translateX(130vw);
+  }
+}
+
+/* Notched tab nav, cut into the top edge. */
+.notch {
+  clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 28px 100%);
+}
+
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(6px);
-    filter: blur(3px);
+    transform: translateY(8px);
   }
 }
-.rise > * {
-  /* backwards, not both: a filled transform/filter would trap the fixed hover preview. */
-  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
-}
-.rise > *:nth-child(2) { animation-delay: 0.06s; }
-.rise > *:nth-child(3) { animation-delay: 0.12s; }
-.rise > *:nth-child(4) { animation-delay: 0.18s; }
-.rise > *:nth-child(5) { animation-delay: 0.24s; }
-.rise > *:nth-child(6) { animation-delay: 0.3s; }
-.rise > *:nth-child(7) { animation-delay: 0.36s; }
-.rise > *:nth-child(8) { animation-delay: 0.42s; }
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 50%, transparent); }
-  100% { box-shadow: 0 0 0 6px transparent; }
-}
-.live-dot {
-  animation: pulse 2s ease-out infinite;
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise > *,
-  .live-dot {
+  html {
+    scroll-behavior: auto;
+  }
+  .cloud,
+  .rise {
     animation: none;
+  }
+  body,
+  .sky,
+  .sun,
+  .moon {
+    transition: none;
   }
 }

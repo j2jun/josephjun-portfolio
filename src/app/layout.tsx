@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
+import { IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
 const instrument = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-instrument",
 });
+
+// Only for real terminal output in project previews.
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-plex-mono",
+});
+
+// Runs before paint: saved choice, else the visitor's own sky (day 6am-6pm local).
+const modeScript = `(function(){var m;try{m=localStorage.getItem('mode')}catch(e){}if(m!=='day'&&m!=='night'){var h=new Date().getHours();m=h>=6&&h<18?'day':'night'}document.documentElement.dataset.mode=m})();`;
 
 const siteUrl = "https://josephjun-portfolio.vercel.app";
 
@@ -36,7 +46,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={instrument.variable}>
+    <html lang="en" className={`${instrument.variable} ${plexMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: modeScript }} />
+      </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );
