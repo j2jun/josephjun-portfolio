@@ -1,66 +1,96 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #000000;
-  --paper: #f0f0ee;
-  --white: #ffffff;
-  --grey: #8c8c8a;
-  --dim: #3a3a3a;
-  --card: #1a1a1a;
+  --bg: #fdfdfc;
+  --fg: #1b1b1f;
+  --muted: #6f6f78;
+  --faint: #a3a3ab;
+  --line: #e9e9ec;
+  --hover: #f3f3f5;
+  --live: #16a34a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101012;
+    --fg: #ececef;
+    --muted: #92929c;
+    --faint: #5c5c66;
+    --line: #232328;
+    --hover: #18181c;
+    --live: #4ade80;
+  }
 }
 
 @theme inline {
-  --font-sans: var(--font-archivo);
-  --color-ink: var(--ink);
-  --color-paper: var(--paper);
-  --color-grey: var(--grey);
-  --color-dim: var(--dim);
-  --color-card: var(--card);
-}
-
-html {
-  scroll-behavior: smooth;
+  --font-sans: var(--font-instrument);
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-hover: var(--hover);
+  --color-live: var(--live);
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--fg);
 }
 
-/* Condensed, tight display type: the one loud element on the page. */
-.display {
-  font-variation-settings: "wdth" 82;
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 0.86;
-  text-transform: uppercase;
-}
-
-.caps {
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
+::selection {
+  background: var(--fg);
+  color: var(--bg);
 }
 
 :focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--fg);
   outline-offset: 3px;
+  border-radius: 4px;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+/* Text links: quiet underline that firms up on hover. */
+.link {
+  text-decoration: underline;
+  text-decoration-color: var(--faint);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+.link:hover {
+  text-decoration-color: var(--fg);
+}
+
+/* The single page-load moment: blocks settle in one after another. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(3px);
   }
 }
+.rise > * {
+  /* backwards, not both: a filled transform/filter would trap the fixed hover preview. */
+  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+.rise > *:nth-child(2) { animation-delay: 0.06s; }
+.rise > *:nth-child(3) { animation-delay: 0.12s; }
+.rise > *:nth-child(4) { animation-delay: 0.18s; }
+.rise > *:nth-child(5) { animation-delay: 0.24s; }
+.rise > *:nth-child(6) { animation-delay: 0.3s; }
+.rise > *:nth-child(7) { animation-delay: 0.36s; }
+.rise > *:nth-child(8) { animation-delay: 0.42s; }
 
-.ring-spin {
-  animation: spin 120s linear infinite;
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 50%, transparent); }
+  100% { box-shadow: 0 0 0 6px transparent; }
+}
+.live-dot {
+  animation: pulse 2s ease-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .ring-spin {
+  .rise > *,
+  .live-dot {
     animation: none;
   }
 }

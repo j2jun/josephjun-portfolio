@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
-const archivo = Archivo({
+const instrument = Instrument_Sans({
   subsets: ["latin"],
-  axes: ["wdth"],
-  variable: "--font-archivo",
+  variable: "--font-instrument",
 });
 
 const siteUrl = "https://josephjun-portfolio.vercel.app";
@@ -37,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={archivo.variable}>
+    <html lang="en" className={instrument.variable}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

@@ -15,20 +15,20 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "80px",
-          backgroundColor: "#000000",
-          color: "#f2f2f0",
+          backgroundColor: "#fdfdfc",
+          color: "#1b1b1f",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 32, color: "#8c8c8a", letterSpacing: 2 }}>
-          SOFTWARE ENGINEER/
+        <div style={{ display: "flex", fontSize: 32, color: "#16a34a", letterSpacing: 2 }}>
+          Software engineer
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <div style={{ display: "flex", fontSize: 88, fontWeight: 700, lineHeight: 1.1 }}>
             Joseph Jun
           </div>
-          <div style={{ display: "flex", fontSize: 40, color: "#9a9a94" }}>
+          <div style={{ display: "flex", fontSize: 40, color: "#6f6f78" }}>
             Building reliable, scalable systems.
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function Image() {
               display: "flex",
               alignItems: "center",
               fontSize: 26,
-              color: "#9a9a94",
+              color: "#6f6f78",
               border: "2px solid rgba(255,255,255,0.14)",
               borderRadius: 8,
               padding: "12px 22px",
@@ -52,7 +52,7 @@ export default function Image() {
               display: "flex",
               alignItems: "center",
               fontSize: 26,
-              color: "#8c8c8a",
+              color: "#16a34a",
               border: "2px solid #8c8c8a",
               borderRadius: 8,
               padding: "12px 22px",
