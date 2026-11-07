@@ -24,16 +24,24 @@ Ex-Amazon Prime Video SDE apprentice · UC San Diego Math-CS · U.S. Army vetera
 
 I build backend infrastructure, data pipelines, and developer tooling, most recently at **Amazon Prime Video**. Before software, I spent five years as a **Sergeant in the U.S. Army**, leading a 15+ person squad and managing $750K+ in equipment. That's where I learned to care about reliability and process. I'm currently **open to software engineering roles**.
 
-## 🚀 Highlights
+## ☀️ Day: professional work
 
 | | Impact |
 |---|---|
-| **Amazon Prime Video** | Migrated ~10,000 services S3 → DynamoDB (**~15% lower cost**); built Consensus Review, adopted by 2 teams; review prep cut from **2 weeks to 1–3 days** |
-| **CITMIT** | MySQL tuning + distributed cache: **30% faster queries, ~20% less peak DB load** |
+| **Amazon Prime Video** | Migrated ~10,000 services S3 → DynamoDB (**~15% lower cost**); built Consensus Review, a two-person approval library adopted by Service Catalog and Operational Readiness Review; privacy and anti-abuse tooling; review prep cut from **2 weeks to 1–3 days** |
+| **CITMIT** | MySQL tuning + caching layer: **30% faster queries, ~20% less peak DB load**; automated disaster recovery |
 | **Tech for Good** | Solidity donation-transparency platform, **40% faster verification** |
-| **[Inbox to Action](https://github.com/j2jun/inbox-to-action)** | Email → prioritized Notion to-dos with Claude, **156 automated tests** |
+| **U.S. Army** | Sergeant, led 15+ personnel, **$750K+** of equipment at a **95%** inspection pass rate |
 
-Also on the site: a live **[tech hiring tracker](https://josephjun.vercel.app/job-market/index.html)**.
+## 🌙 Night: built after hours
+
+| Project | What it does |
+|---|---|
+| **[Inbox to Action](https://github.com/j2jun/inbox-to-action)** | Turns task emails and meeting invites into one prioritized Notion list, with Claude reading free-form requests. **156 automated tests** |
+| **[sniff](https://github.com/j2jun/sniff)** | Scans take-home assignments for fake-recruiter malware without running anything, plus a Docker sandbox. CI on macOS, Linux and Windows |
+| **[SOC detection lab](https://github.com/j2jun/soc-detection-platform)** | Mini security operations center: Sigma rules as code, Wazuh and Elastic, attack simulations mapped to MITRE ATT&CK |
+| **[Tech Hiring Tracker](https://josephjun.vercel.app/job-market/index.html)** | Weekly read on where tech hiring is moving, by region, role and level |
+| **[System Design Notes](https://github.com/j2jun/system-design-notes)** | Public learning log of system design topics with diagrams, trade-offs and AWS mappings |
 
 ## 🛠️ Built with
 
