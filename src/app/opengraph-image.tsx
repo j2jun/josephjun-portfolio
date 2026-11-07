@@ -15,13 +15,13 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "80px",
-          backgroundColor: "#0a0b0d",
+          backgroundColor: "#000000",
           color: "#f2f2f0",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 32, color: "#22d3ee", letterSpacing: 2 }}>
-          [ software engineer ]
+        <div style={{ display: "flex", fontSize: 32, color: "#8c8c8a", letterSpacing: 2 }}>
+          SOFTWARE ENGINEER/
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
@@ -52,8 +52,8 @@ export default function Image() {
               display: "flex",
               alignItems: "center",
               fontSize: 26,
-              color: "#22d3ee",
-              border: "2px solid #22d3ee",
+              color: "#8c8c8a",
+              border: "2px solid #8c8c8a",
               borderRadius: 8,
               padding: "12px 22px",
             }}
