@@ -1,7 +1,7 @@
 <div align="center">
 
-<a href="https://josephjun-portfolio.vercel.app/">
-  <img src="https://josephjun-portfolio.vercel.app/opengraph-image" alt="Joseph Jun — Software Engineer" width="720" />
+<a href="https://josephjun.vercel.app/">
+  <img src="https://josephjun.vercel.app/opengraph-image" alt="Joseph Jun — Software Engineer" width="720" />
 </a>
 
 # Joseph Jun
@@ -9,11 +9,11 @@
 **Software engineer building reliable, scalable systems.**
 Ex-Amazon Prime Video SDE apprentice · UC San Diego Math-CS · U.S. Army veteran · Active DoD Secret clearance
 
-### 🌐 [josephjun-portfolio.vercel.app](https://josephjun-portfolio.vercel.app/)
+### 🌐 [josephjun.vercel.app](https://josephjun.vercel.app/)
 
-[![Live site](https://img.shields.io/badge/live-josephjun--portfolio.vercel.app-000?logo=vercel)](https://josephjun-portfolio.vercel.app/)
+[![Live site](https://img.shields.io/badge/live-josephjun.vercel.app-000?logo=vercel)](https://josephjun.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-j2jun-0A66C2?logo=linkedin)](https://linkedin.com/in/j2jun)
-[![Résumé](https://img.shields.io/badge/résumé-PDF-red?logo=adobeacrobatreader)](https://josephjun-portfolio.vercel.app/resume.pdf)
+[![Résumé](https://img.shields.io/badge/résumé-PDF-red?logo=adobeacrobatreader)](https://josephjun.vercel.app/resume.pdf)
 [![Email](https://img.shields.io/badge/email-jhjun713%40gmail.com-555?logo=gmail)](mailto:jhjun713@gmail.com)
 
 </div>
@@ -33,7 +33,7 @@ I build backend infrastructure, data pipelines, and developer tooling, most rece
 | **Tech for Good** | Solidity donation-transparency platform, **40% faster verification** |
 | **[Inbox to Action](https://github.com/j2jun/inbox-to-action)** | Email → prioritized Notion to-dos with Claude, **156 automated tests** |
 
-Also on the site: a live **[tech hiring tracker](https://josephjun-portfolio.vercel.app/job-market/index.html)**.
+Also on the site: a live **[tech hiring tracker](https://josephjun.vercel.app/job-market/index.html)**.
 
 ## 🛠️ Built with
 

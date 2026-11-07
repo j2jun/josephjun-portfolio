@@ -17,7 +17,7 @@ const plexMono = IBM_Plex_Mono({
 // Runs before paint: saved choice, else the visitor's own sky (day 6am-6pm local).
 const modeScript = `(function(){var m;try{m=localStorage.getItem('mode')}catch(e){}if(m!=='day'&&m!=='night'){var h=new Date().getHours();m=h>=6&&h<18?'day':'night'}document.documentElement.dataset.mode=m})();`;
 
-const siteUrl = "https://josephjun-portfolio.vercel.app";
+const siteUrl = "https://josephjun.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
