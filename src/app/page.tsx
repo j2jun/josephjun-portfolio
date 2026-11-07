@@ -111,6 +111,23 @@ const night: Project[] = [
     href: "/job-market/index.html",
     visual: { kind: "image", src: "/work/hiring-tracker.jpg", alt: "Tech Hiring Tracker headline" },
   },
+  {
+    title: "System Design Notes",
+    meta: "2026",
+    summary:
+      "A public learning log of system design topics in plain language, with diagrams, trade-offs, AWS mappings and self-check questions. I add a note each time I learn something new.",
+    stack: "Markdown, Mermaid, GitHub",
+    href: "https://github.com/j2jun/system-design-notes",
+    visual: {
+      kind: "terminal",
+      lines: [
+        "$ ls notes/",
+        "database-types.md",
+        "horizontal-vs-vertical-scaling.md",
+        "+ learning log, glossary, reading list",
+      ],
+    },
+  },
 ];
 
 export default function Home() {
