@@ -22,14 +22,14 @@ Ex-Amazon Prime Video SDE apprentice · UC San Diego Math-CS · U.S. Army vetera
 
 ## 👋 About
 
-I build backend infrastructure, data pipelines, and developer tooling, most recently at **Amazon Prime Video**. Before software, I spent five years as a **Sergeant in the U.S. Army**, leading a 15+ person squad and managing $3M+ in equipment. That's where I learned to care about reliability and process. I'm currently **open to software engineering roles**.
+I build backend infrastructure, data pipelines, and developer tooling, most recently at **Amazon Prime Video**. Before software, I spent five years as a **Sergeant in the U.S. Army**, leading a 15+ person squad and managing $750K+ in equipment. That's where I learned to care about reliability and process. I'm currently **open to software engineering roles**.
 
 ## 🚀 Highlights
 
 | | Impact |
 |---|---|
-| **Amazon Prime Video** | Migrated service metadata S3 → DynamoDB, **~40% lower operational cost** |
-| **CITMIT** | MySQL tuning + distributed cache: **30% faster queries, 50% less peak DB load** |
+| **Amazon Prime Video** | Migrated ~10,000 services S3 → DynamoDB (**~15% lower cost**); built Consensus Review, adopted by 2 teams; review prep cut from **2 weeks to 1–3 days** |
+| **CITMIT** | MySQL tuning + distributed cache: **30% faster queries, ~20% less peak DB load** |
 | **Tech for Good** | Solidity donation-transparency platform, **40% faster verification** |
 | **[Inbox to Action](https://github.com/j2jun/inbox-to-action)** | Email → prioritized Notion to-dos with Claude, **156 automated tests** |
 

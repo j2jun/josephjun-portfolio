@@ -24,20 +24,36 @@ type Project = {
 // Day: professional work.
 const day: Project[] = [
   {
-    title: "Service registry migration",
-    meta: "Amazon Prime Video · 2025",
+    title: "Service metadata migration",
+    meta: "Amazon Prime Video · 2025–26",
     summary:
-      "Moved service metadata from S3 to DynamoDB and consolidated the automation around it. I also built a privacy-review library and a content-abuse pipeline for anti-piracy.",
-    stack: "DynamoDB, S3, CI/CD",
-    visual: { kind: "stat", value: "−40%", label: "operational cost", sky: "linear-gradient(to bottom, #5f9fd8, #cfe4f5)" },
+      "Migrated metadata for about 10,000 services from S3 to DynamoDB, consolidating automation workflows and cutting costs about 15%. Built the self-service registration API in front of it, safeguarded against customer data leakage.",
+    stack: "DynamoDB, S3, AWS",
+    visual: { kind: "stat", value: "10,000", label: "services migrated", sky: "linear-gradient(to bottom, #5f9fd8, #cfe4f5)" },
   },
   {
-    title: "Database reliability",
+    title: "Consensus Review",
+    meta: "Amazon Prime Video · 2025–26",
+    summary:
+      "A two-person approval library in TypeScript and React for the tier-1 Service Resilience Portal, protecting service metadata quality and change tracking. Adopted by Service Catalog and Operational Readiness Review.",
+    stack: "TypeScript, React, Claude Code, Kiro",
+    visual: { kind: "stat", value: "Tier 1", label: "Service Resilience Portal", sky: "linear-gradient(to bottom, #6aa8de, #d9eaf7)" },
+  },
+  {
+    title: "Privacy and anti-abuse tooling",
+    meta: "Amazon Prime Video · 2025–26",
+    summary:
+      "Built a privacy review library, piracy detection tooling and AWS Glue jobs that move abusive-account data securely to investigators, closing a tracking gap abusers used. Automated review dashboards cut prep from about two weeks to 1–3 days.",
+    stack: "AWS Glue, QuickSight, Redshift, MySQL",
+    visual: { kind: "stat", value: "1–3 days", label: "review prep, down from 2 weeks", sky: "linear-gradient(to bottom, #78b2e4, #e2eef8)" },
+  },
+  {
+    title: "Database performance",
     meta: "CITMIT · 2023",
     summary:
-      "Indexed and restructured MySQL queries, added a distributed cache and automated disaster recovery for a construction-management platform. Queries got 30% faster.",
+      "Tuned MySQL with indexing and query work, and designed a caching layer that cut peak database load about 20%. Also built a fault-tolerant disaster recovery pipeline with Bash and S3.",
     stack: "MySQL, Bash, S3",
-    visual: { kind: "stat", value: "−50%", label: "peak database load", sky: "linear-gradient(to bottom, #7fb6e8, #e4eff8)" },
+    visual: { kind: "stat", value: "30%", label: "faster queries", sky: "linear-gradient(to bottom, #8dbbe6, #e9f1f8)" },
   },
   {
     title: "Donation transparency",
@@ -51,7 +67,7 @@ const day: Project[] = [
     title: "Squad leadership",
     meta: "U.S. Army · 2015–2020",
     summary:
-      "Five years as a sergeant in Tacoma, WA and Pyeongtaek, South Korea. Led 15+ soldiers and kept $3M+ of equipment mission-ready.",
+      "Five years as a sergeant in Tacoma, WA and Pyeongtaek, South Korea. Led and mentored 15+ personnel and managed $750K+ of mission-critical equipment.",
     stack: "Leadership, logistics, operations",
     visual: { kind: "stat", value: "95%", label: "inspection pass rate", sky: "linear-gradient(to bottom, #b9b6dc, #f5c9b3)" },
   },
